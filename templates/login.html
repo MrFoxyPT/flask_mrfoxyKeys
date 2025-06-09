@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <div class="teste">
+        <form action="" method="POST">
+            <h2>{{ loja_nome }} - Login</h2>
+            {{form.hidden_tag()}}
+            <p class="label">{{ form.username.label}} {{form.username()}}</p>
+            <p class="label">{{ form.password.label}} {{form.password()}}</p>
+            <p>{{ form.submeter }}</p>
+        </form>
+    </div>
+    <p><a href="{{ url_for('registo') }}">Registar nova conta</a></p>
+{% endblock %}

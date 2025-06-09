@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <div class="container mt-4">
+        <h1 class="mb-4">Lista de Produtos</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Desenvolvedor</th>
+                        <th>Ano</th>
+                        <th>Preço (€)</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in itens %}
+                        <tr>
+                            <td>{{ item.nome }}</td>
+                            <td>{{ item.desenvolvedor }}</td>
+                            <td>{{ item.ano }}</td>
+                            <td>{{ "%.2f"|format(item.preco) }}</td>
+                            <td>
+                                <a href="{{ url_for('adicionar_carrinho', id=item.id) }}" class="btn btn-primary btn-sm">Adicionar ao Carrinho</a>
+                                {% if current_user.role == 'admin' %}
+                                    <a href="{{ url_for('editar', id=item.id) }}" class="btn btn-warning btn-sm">Editar</a>
+                                    <a href="{{ url_for('apagar', id=item.id) }}" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza?')">Apagar</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

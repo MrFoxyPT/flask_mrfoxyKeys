@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+    <div class="container mt-4">
+        <h1 class="mb-4">{{ loja_nome }} - Histórico de Compras</h1>
+        <p><a href="{{ url_for('listar') }}" class="btn btn-secondary">Voltar à Loja</a></p>
+        {% if compras %}
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Produto</th>
+                            <th>Preço Pago (€)</th>
+                            <th>Chave</th>
+                            <th>Data da Compra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for compra in compras %}
+                            <tr>
+                                <td>{{ compra.item.nome }}</td>
+                                <td>{{ "%.2f"|format(compra.preco_pago) }}</td>
+                                <td>{{ compra.chave.chave }}</td>
+                                <td>{{ compra.data_compra.strftime('%d/%m/%Y %H:%M') }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <p class="text-center">Você não possui compras registradas.</p>
+        {% endif %}
+    </div>
+{% endblock %}

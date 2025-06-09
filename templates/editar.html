@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h1>{{ loja_nome }} - Editar</h1>
+    <div class="teste">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <p>{{ form.nome.label }}: {{ form.nome }}</p>
+            <p>{{ form.desenvolvedor.label }}: {{ form.desenvolvedor }}</p>
+            <p>{{ form.ano.label }}: {{ form.ano }}</p>
+            <p>{{ form.preco.label }}: {{ form.preco }}</p>
+            <p>{{ form.chaves.label }}: {{ form.chaves(rows=5, cols=50) }}</p>
+            <p>{{ form.submeter }}</p>
+        </form>
+    </div>
+{% endblock %}

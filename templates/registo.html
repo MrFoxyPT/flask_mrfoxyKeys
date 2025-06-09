@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h1>{{ loja_nome }} - {% if 'login' in request.endpoint %}Login{% else %}Registo{% endif %}</h1>
+<div class="teste">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p class="label">{{ form.username.label }}: {{ form.username }}</p>
+        <p class="label">{{ form.password.label }}: {{ form.password }}</p>
+        {% if 'registo' in request.endpoint %}
+            <p class="label">{{ form.confirmar.label }}: {{ form.confirmar }}</p>
+        {% endif %}
+        <p>{{ form.submeter }}</p>
+    </form>
+</div>
+{% endblock %}

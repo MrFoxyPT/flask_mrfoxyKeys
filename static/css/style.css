@@ -1,0 +1,124 @@
+.label {
+    width: 200px;
+}
+
+.usercolor {
+    position: relative;
+    display: inline-block;
+    color: white;
+    border-radius: 15px; /* Forma oval */
+    padding: 5px 10px;
+    background: linear-gradient(to right, purple, blue); /* Gradiente estático */
+    overflow: hidden; /* Garante que o fundo não vaze */
+}
+
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to top, rgb(79, 79, 218, 0.5), rgb(153, 20, 153, 0.5));
+    color: white;
+}
+
+
+body {
+    padding: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+nav a {
+    color: white;
+    margin-right: 7px;
+    margin-left: 15px;
+    text-decoration: none;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+.flash-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.flash-message.sucesso {
+    background-color: #d4edda;
+    color: #155724;
+}
+.flash-message.erro {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* forms/formularios */
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4c77af;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #3c6294;
+}
+
+.teste {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+nav img {
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: white;
+}
+
+main {
+    background: rgba(255, 255, 255, 0.9); /* Aumentado para 0.9 para maior contraste */
+    padding: 20px;
+    border-radius: 5px;
+    margin: 0 auto;
+    max-width: 1200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    color: #333; /* Texto escuro para contrastar com o fundo claro */
+}

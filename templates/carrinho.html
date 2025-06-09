@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h1>{{ loja_nome }} - Carrinho</h1>
+<p><a href="{{ url_for('listar') }}">Voltar à Loja</a></p>
+{% if itens_carrinho %}
+    <ul>
+    {% for carrinho in itens_carrinho %}
+        <li>{{ carrinho.item.nome }} - €{{ carrinho.item.preco }}
+            <a href="{{ url_for('remover_carrinho', id=carrinho.item_id) }}">Remover</a>
+        </li>
+    {% endfor %}
+    </ul>
+    <p><strong>Total: €{{ total }}</strong></p>
+    <a href="{{ url_for('finalizar_compra') }}">Finalizar Compra</a>
+{% else %}
+    <p>Seu carrinho está vazio.</p>
+{% endif %}
+{% endblock %}
